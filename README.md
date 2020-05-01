@@ -1,23 +1,27 @@
-# Front 2dfrango  
+# Ddfrango
 
-Projeto Front-end referente Projeto desenvolvido durante o Mega Hack  
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
-# Desafio
+## Development server
 
-## Flourish  
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-A Flourish existe para ajudar as pessoas a alcançarem seus objetivos e sonhos. sem que as finanças pessoas sejam uma barreira. Estamos começando a tornar o ato de poupar e investir mais acessível e divertido. Acreditamos que iremos transformar a maneira como as pessoas interagem com suas finanças em todo o mundo. Por isso, queremos convidá-los a repensar e criar novas alternativas que ajudem as pessoas resolvem problemas de educação e Saúde Financeira  
+## Code scaffolding
 
-Redesenhando finanças pessoais com mecânicas de motivação e engajamento.  
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Contexto:
+## Build
 
-- Seis em cada 10 brasileiros (58%) admitem que nunca, ou raramente, dedicam tempo às atividades de controle de vida financeira.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-- 9% da população poupou em 2017 e menos da metade (42%) tem algum dinheiro guardado.
+## Running unit tests
 
-- "As pessoas declaram falta de conhecimento sobre as próprias finanças." "Importante, porém uma tarefa bem chata".  
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Educação e Saúde Financeira
+## Running end-to-end tests
 
-Criar soluções tecnologias e inovadoras que visam apoiar jovens adultos brasileiros a poupar e investir, utilizando mecânicas de motivação e engajamento e desenvolvendo maior entendimento de seus gastos.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
