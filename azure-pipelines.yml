@@ -1,0 +1,28 @@
+trigger:
+  - master
+  pool:
+    vmImage: 'ubuntu-latest'
+  variables:
+    system.debug: true
+  steps:
+    - task: NodeTool@0
+      inputs:    
+        versionSpec: '10.x'
+    - script:
+        npm install @angular/cli -g
+      workingDirectory: 'Client'
+    - script:
+        npm install
+      workingDirectory: 'Client'
+    - script:  
+        ng build 
+      displayName: 'ng build'
+      workingDirectory: Client
+        
+    - task: AzureRmWebAppDeployment@4
+    displayName: 'Azure App Service Deploy: Angular'
+    inputs:
+      azureSubscription: 'app2dfrango - Azure'
+      WebAppName: app2dfrango
+      packageForLinux: Client/dist/
+  
