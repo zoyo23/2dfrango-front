@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sonda',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SondaComponent implements OnInit {
 
-  constructor() { }
+  sonda: any = "Consultando sonda...";
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+	  this.getSonda().subscribe(response => {
+		this.sonda = response;
+	  }, error => {
+		this.sonda = error.message;
+	  })
+  }
+  getSonda() {
+	return  this.http.get('https://2defrangoapi.azurewebsites.net/sonda');
   }
 
 }
