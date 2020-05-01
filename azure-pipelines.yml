@@ -6,18 +6,21 @@ variables:
   system.debug: true
 steps:
     - task: NodeTool@0
+      displayName: 'Define NodeTool'
       inputs:    
         versionSpec: '10.x'
     - script:
         npm install @angular/cli -g
       workingDirectory: './'
+      displayName: 'Install Angular CLI'
     - script:
         npm install
       workingDirectory: './'
+      displayName: 'Run npm Install'
     - script:  
-        ng build 
-      displayName: 'ng build --prod --base-href ./'
-      workingDirectory: './'        
+        ng build --prod --base-href ./ 
+      displayName: 'Run ng build'
+      workingDirectory: './'
     - task: AzureRmWebAppDeployment@4
       displayName: 'Azure App Service Deploy: Angular'
       inputs:
