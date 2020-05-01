@@ -16,7 +16,7 @@ steps:
       workingDirectory: './'
     - script:  
         ng build 
-      displayName: 'ng build --prod --base-href'
+      displayName: 'ng build --prod --base-href /'
       workingDirectory: './'        
     - task: AzureRmWebAppDeployment@4
       displayName: 'Azure App Service Deploy: Angular'
