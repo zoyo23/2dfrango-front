@@ -18,7 +18,7 @@ steps:
       workingDirectory: './'
       displayName: 'Run npm Install'
     - script:  
-        ng build --prod --base-href ./ 
+        ng build --prod --base-href 
       displayName: 'Run ng build'
       workingDirectory: './'
     - task: AzureRmWebAppDeployment@4
