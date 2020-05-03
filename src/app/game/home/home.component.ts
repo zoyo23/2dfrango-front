@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameHomeComponent implements OnInit {
 
-  constructor() { }
+	url : any;
+	status: string;
+	constructor(private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+		this.setUrl('game');
+	}
+
+	setUrl(url:string) {
+		this.status =  url;
+		this.url = this.sanitizer.bypassSecurityTrustResourceUrl(url)
+	}
 
 }

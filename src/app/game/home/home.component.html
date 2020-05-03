@@ -1,3 +1,10 @@
-<div class="capsule">
-	<iframe src="game" frameborder="0"></iframe>
+<div class="capsule" [class]="status">
+	<div class="wrap">
+		<div class="tabs">
+			<button (click)="setUrl('achievements')" [class.active]="status == 'achievements'"><img src="assets/svg/trophy.svg" /></button>
+			<button (click)="setUrl('game')" [class.active]="status == 'game'"><img src="assets/svg/map.svg" /></button>
+			<button (click)="setUrl('sales')"  [class.active]="status == 'sales'"><img src="assets/svg/coupon.svg" /></button>
+		</div>
+		<iframe [src]="url" frameborder="0"></iframe>
+	</div>
 </div>
