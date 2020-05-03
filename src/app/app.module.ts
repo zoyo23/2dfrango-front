@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SondaComponent } from './sonda/sonda.component';
@@ -42,53 +45,73 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+let config = new AuthServiceConfig([
+	{
+		id: GoogleLoginProvider.PROVIDER_ID,
+		provider: new GoogleLoginProvider("419273351615-a2kp1blvs5f3idt3mlr5vbkeqtqgjvr6.apps.googleusercontent.com")
+	},
+	{
+		id: FacebookLoginProvider.PROVIDER_ID,
+		provider: new FacebookLoginProvider("234918024486588")
+	}
+]);
+
+export function provideConfig() {
+	return config;
+}
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SondaComponent
-],
-imports: [
-	BrowserModule,
-	AppRoutingModule,
-	HttpClientModule,
-	BrowserAnimationsModule,
-	MatCheckboxModule,
-	MatCheckboxModule,
-	MatButtonModule,
-	MatInputModule,
-	MatAutocompleteModule,
-	MatDatepickerModule,
-	MatFormFieldModule,
-	MatRadioModule,
-	MatSelectModule,
-	MatSliderModule,
-	MatSlideToggleModule,
-	MatMenuModule,
-	MatSidenavModule,
-	MatToolbarModule,
-	MatListModule,
-	MatGridListModule,
-	MatCardModule,
-	MatStepperModule,
-	MatTabsModule,
-	MatExpansionModule,
-	MatButtonToggleModule,
-	MatChipsModule,
-	MatIconModule,
-	MatProgressSpinnerModule,
-	MatProgressBarModule,
-	MatDialogModule,
-	MatTooltipModule,
-	MatSnackBarModule,
-	MatTableModule,
-	MatSortModule,
-	MatPaginatorModule,
-	SigninModule,
-	SignupModule,
-	GameModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		SondaComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		BrowserAnimationsModule,
+		MatCheckboxModule,
+		MatCheckboxModule,
+		MatButtonModule,
+		MatInputModule,
+		MatAutocompleteModule,
+		MatDatepickerModule,
+		MatFormFieldModule,
+		MatRadioModule,
+		MatSelectModule,
+		MatSliderModule,
+		MatSlideToggleModule,
+		MatMenuModule,
+		MatSidenavModule,
+		MatToolbarModule,
+		MatListModule,
+		MatGridListModule,
+		MatCardModule,
+		MatStepperModule,
+		MatTabsModule,
+		MatExpansionModule,
+		MatButtonToggleModule,
+		MatChipsModule,
+		MatIconModule,
+		MatProgressSpinnerModule,
+		MatProgressBarModule,
+		MatDialogModule,
+		MatTooltipModule,
+		MatSnackBarModule,
+		MatTableModule,
+		MatSortModule,
+		MatPaginatorModule,
+		SigninModule,
+		SignupModule,
+		GameModule,
+		SocialLoginModule
+	],
+	providers: [
+		{
+			provide: AuthServiceConfig,
+			useFactory: provideConfig
+		}
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

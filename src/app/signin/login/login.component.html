@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="">
+    <div *ngIf="!user" class="card text-center">
+        <h6 class="">
+            Social Login Demo
+        </h6>
+        <div class="">
+            <h4 class="">Not signed in</h4>
+            <p class="">Sign in with</p>
+        </div>
+        <div class="">
+            <button mat-button color="accent" (click)="signInWithGoogle()">Login Google</button>
+            <button mat-button color="accent" (click)="signInWithFB()">Login Facebook</button>
+        </div>
+    </div>
+
+    <div *ngIf="user" class="card text-center">
+        <h6 class="card-header">
+            Social Login Demo
+        </h6>
+        <div class="card-block"></div>
+        <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+        <div class="card-block">
+            <h4 class="card-title">{{ user.name }}</h4>
+            <p class="card-text">{{ user.email }}</p>
+        </div>
+        <div class="card-block">
+            <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+        </div>
+    </div>
+</div>
