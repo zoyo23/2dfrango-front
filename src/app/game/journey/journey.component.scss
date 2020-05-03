@@ -27,22 +27,23 @@
 				background: url('/assets/svg/bagde-normal.svg') no-repeat center;
 				color: #8D6C9F;
 				font-size: 5vw;
-				line-height: 19vw;
+				line-height: 18vw;
 				text-align: center;
 				font-weight: 900;
 				text-shadow: 0 3px rgba(black, 15%);
 				transition: transform .5s;
-				&:hover {
-					transform: scale(1.25);
+				animation: pulse 3s cubic-bezier(0.1, 0.7, 1.0, 0.1) 2s infinite alternate;
+				&.active { 
+					animation-name: pulseactive;
+					background-image: url('/assets/svg/bagde-active.svg');
 				}
-				&.badge-1 {
-					left: 7vw;
-    				top: 42vw;
-				}
-				&.badge-2 {
-					left: 133vw;
-    				top: 62vw;
-				}
+				&.badge-1 { left: 7vw; top: 42vw; }
+				&.badge-2 { left: 133vw; top: 62vw; }
+				&.badge-3 { left: 219vw; top: 88vw; }
+				&.badge-4 { left: 324vw; top: 32vw; }
+				&.badge-5 { left: 426vw; top: 38vw; }
+				&.badge-6 { left: 534vw; top: 79vw; }
+				&.badge-7 { left: 669vw; top: 42vw; }
 			}
 			
 		}
@@ -70,5 +71,17 @@
 			
 			background: linear-gradient(90deg, rgba(248,221,142,1) 0%, rgba(161,193,81,1) 100%); 
 		}
+	}
+}
+:host {
+
+	@keyframes pulse {
+		0%, 90% { transform: scale(1); }
+		100% { transform: scale(1.25); }
+	}
+
+	@keyframes pulseactive {
+		0%, 90% { transform: scale(1); }
+		100% { transform: scale(1.5); }
 	}
 }
