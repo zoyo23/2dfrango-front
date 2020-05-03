@@ -24,7 +24,7 @@
 				position: absolute;
 				width: 19.35vw;
 				height: 19.35vw;
-				background: url('/assets/svg/bagde-normal.svg') no-repeat center;
+				background: url('src/assets/svg/bagde-normal.svg') no-repeat center;
 				color: #8D6C9F;
 				font-size: 5vw;
 				line-height: 18vw;
@@ -35,7 +35,7 @@
 				animation: pulse 3s cubic-bezier(0.1, 0.7, 1.0, 0.1) 2s infinite alternate;
 				&.active { 
 					animation-name: pulseactive;
-					background-image: url('/assets/svg/bagde-active.svg');
+					background-image: url('src/assets/svg/bagde-active.svg');
 				}
 				&.badge-1 { left: 7vw; top: 42vw; }
 				&.badge-2 { left: 133vw; top: 62vw; }
@@ -65,7 +65,7 @@
 			max-height: 115vw;
 			top: 50%;
 			margin-top: -57.5vw;
-			background: url('/assets/svg/bggame.svg') no-repeat center;
+			background: url('src/assets/svg/bggame.svg') no-repeat center;
 		}
 		&:before { 
 			
