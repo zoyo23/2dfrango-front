@@ -3,12 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { SondaComponent } from "./sonda/sonda.component";
 import { LoginComponent, LostPassComponent } from "./signin/signin.index";
 import { AccountComponent, BankComponent, GoldComponent, PassComponent } from "./signup/signup.index";
-import { AchievementsComponent, JourneyComponent, SalesComponent } from './game/game.index';
+import { AchievementsComponent, JourneyComponent, SalesComponent, GameHomeComponent } from './game/game.index';
 
 
 const routes: Routes = [
 	{ path: 'sonda', component: SondaComponent },
-	{ path: '', component: JourneyComponent },
+	{ path: '', component: GameHomeComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'lost-pass', component: LostPassComponent },
 	{ path: 'register', component: AccountComponent },

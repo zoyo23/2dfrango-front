@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AchievementsComponent, JourneyComponent, SalesComponent } from "./game.index";
+import { GameHomeComponent, AchievementsComponent, JourneyComponent, SalesComponent } from "./game.index";
 
 
 
 @NgModule({
-	declarations: [AchievementsComponent, JourneyComponent, SalesComponent],
+	declarations: [AchievementsComponent, JourneyComponent, SalesComponent, GameHomeComponent],
   imports: [
     CommonModule
   ]

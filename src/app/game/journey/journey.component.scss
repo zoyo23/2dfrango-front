@@ -3,8 +3,8 @@
 	height: 100%;
 	overflow-x: auto;
 	overflow-y: hidden;
-	 direction: rtl;
-	.journey {
+	direction: rtl;
+ 	.journey {
 		 direction: ltr;
 		position: relative;
 		width: 100vw;
@@ -68,7 +68,6 @@
 			background: url('/assets/svg/bggame.svg') no-repeat center;
 		}
 		&:before { 
-			
 			background: linear-gradient(90deg, rgba(248,221,142,1) 0%, rgba(161,193,81,1) 100%); 
 		}
 	}
