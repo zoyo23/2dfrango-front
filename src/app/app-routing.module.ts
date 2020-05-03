@@ -8,7 +8,7 @@ import { AchievementsComponent, JourneyComponent, SalesComponent } from './game/
 
 const routes: Routes = [
 	{ path: 'sonda', component: SondaComponent },
-	{ path: '', component: LoginComponent },
+	{ path: '', component: JourneyComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'lost-pass', component: LostPassComponent },
 	{ path: 'register', component: AccountComponent },

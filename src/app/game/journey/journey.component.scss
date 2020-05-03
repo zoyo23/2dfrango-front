@@ -1,0 +1,64 @@
+.game-container {
+	width: 100%;
+	height: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	 direction: rtl;
+	.journey {
+		 direction: ltr;
+		position: relative;
+		width: 100vw;
+		height: 100%;
+		overflow: hidden;
+		background: rgba(161,193,81,1);
+		.badges {
+			position: relative;
+			width: 100%;
+			height: 115vw;
+			top: 50%;
+			margin-top: -57.5vw;
+			z-index: 10;
+			.bagde {
+				display: block;
+				position: absolute;
+				width: 19.35vw;
+				height: 19.35vw;
+				background: url('/assets/svg/bagde-normal.svg') no-repeat center;
+				color: #8D6C9F;
+				font-size: 22px;
+				line-height: 19vw;
+				text-align: center;
+				font-weight: 900;
+				text-shadow: 0 3px rgba(black, 15%);
+				transition: transform .5s;
+				&:hover {
+					transform: scale(1.25);
+				}
+				&.badge-1 {
+					left: 7vw;
+    				top: 42vw;
+				}
+				&.badge-2 {
+					left: 133vw;
+    				top: 62vw;
+				}
+			}
+			
+		}
+		@for $i from 1 through 7 {
+			&.level-#{$i} { width: 100vw * $i; }
+		}
+
+		&:before,
+		&:after {
+			position: absolute;
+			content: "";
+			width: 700vw;
+			height: 100vh;
+			top: 0;
+		}
+	
+		&:after { background: url('/assets/svg/bggame.svg') no-repeat center; }
+		&:before { background: linear-gradient(90deg, rgba(248,221,142,1) 0%, rgba(161,193,81,1) 100%); }
+	}
+}
