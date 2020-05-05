@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       if (this.user != null) {
+		  sessionStorage.setItem('user', JSON.stringify(this.user));
 		  this.http.get("https://2defrangoapi.azurewebsites.net/Autenticacao/verificaLogin", {
           headers: new HttpHeaders({
             'Authorization': this.user.idToken
