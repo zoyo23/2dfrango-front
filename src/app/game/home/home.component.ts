@@ -13,7 +13,7 @@ export class GameHomeComponent implements OnInit {
 	constructor(private sanitizer: DomSanitizer) { }
 
 	ngOnInit(): void {
-		this.setUrl('sales');
+		this.setUrl('game');
 	}
 
 	setUrl(url:string) {
