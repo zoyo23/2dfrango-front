@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JourneyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
+	pontuacao: any = {
+		moedas: 0,
+		diamantes: 0
+	}
+	ngOnInit(): void {
+		this.obterPontuacao().subscribe((response:any) => {
+			this.pontuacao.moedas = response.moedas;
+			this.pontuacao.diamantes = response.diamantes;
+		})
+	}
+
+	obterPontuacao() {
+		return this.http.get('https://2defrangoapi.azurewebsites.net/Informacoes/obterPontuacao?email=lucas@gmail.com')
+	}
 
 }
