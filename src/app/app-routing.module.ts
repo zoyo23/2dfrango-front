@@ -8,7 +8,8 @@ import { AchievementsComponent, JourneyComponent, SalesComponent, GameHomeCompon
 
 const routes: Routes = [
 	{ path: 'sonda', component: SondaComponent },
-	{ path: '', component: GameHomeComponent },
+	{ path: '', component: LoginComponent },
+	{ path: 'home', component: GameHomeComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'lost-pass', component: LostPassComponent },
 	{ path: 'register', component: AccountComponent },

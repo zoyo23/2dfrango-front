@@ -1,0 +1,53 @@
+@import '../../game/game';
+.wrap {
+	display: flex;
+	flex-direction: column;
+	background-color: #cdc2e0;
+	text-align: center;
+	justify-content: center;
+	.title {
+    	color: #673ab7;
+		font-size: 32px;
+		font-weight: bold;
+	}
+	.msg-box {
+		align-self: center;
+		width: fit-content;
+		margin: 20px 15px 60px;
+		padding: 10px 15px;
+		border-radius: 15px 15px 15px 2px;
+		background: white;
+		box-shadow: 0 5px 0 rgba(black, .15);
+		font-size: 14px;
+	}
+	.zoe {
+		img {
+			transition: transform .5s;
+			animation: jumping .75s cubic-bezier(0.2, 0.7, 0.2, 0.7) infinite alternate;
+		}
+		&:after {
+			@extend %pseudo;
+			display: block;
+			width: 80px;
+			height: 10px;
+			margin: 0 auto;
+			border-radius: 50%;
+			background: rgba(black, .15);
+			transition: transform .5s;
+			animation: resizing .75s cubic-bezier(0.2, 0.7, 0.2, 0.7) infinite alternate;
+		}
+	}
+	.actions {
+		margin-top: 30px;
+		button { font-size: 16px; }
+	}
+}
+
+@keyframes jumping {
+	to { transform: translate(0, 0); }
+	to { transform: translate(0, -25px); }
+}
+@keyframes resizing {
+	to { transform: scale(1); }
+	to { transform: scale(.7); }
+}

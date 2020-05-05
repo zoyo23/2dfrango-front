@@ -1,19 +1,15 @@
-<div class="">
-    <div *ngIf="!user" class="card text-center">
-        <h6 class="">
-            Social Login Demo
-        </h6>
-        <div class="">
-            <h4 class="">Not signed in</h4>
-            <p class="">Sign in with</p>
+<div class="wrap">
+    <!-- <div *ngIf="!user" class="card text-center"> -->
+        <h1 class="title">Conecte-se</h1>
+		<div class="msg-box">Conecte-se a nossa incrível para começar economizar</div>
+		<div class="zoe"><img src="assets/svg/panda.svg" /></div>
+        <div class="actions">
+            <button mat-flat-button color="primary" (click)="signInWithGoogle()">Login com Google</button>
+           <!--  <button mat-button color="accent" (click)="signInWithFB()">Login Facebook</button> -->
         </div>
-        <div class="">
-            <button mat-button color="accent" (click)="signInWithGoogle()">Login Google</button>
-            <button mat-button color="accent" (click)="signInWithFB()">Login Facebook</button>
-        </div>
-    </div>
+    <!-- </div> -->
 
-    <div *ngIf="user" class="card text-center">
+    <!-- <div *ngIf="user" class="card text-center">
         <h6 class="card-header">
             Social Login Demo
         </h6>
@@ -26,5 +22,5 @@
         <div class="card-block">
             <button class="btn btn-danger" (click)="signOut()">Sign out</button>
         </div>
-    </div>
+    </div> -->
 </div>
